@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Search result</title>
+    <style>
+       *{
+            box-sizing: border-box;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            background-color: olive;
+        }
+        .logo h3{
+            color: wheat;
+            font-size: 1.5rem;
+            padding: 0 10px;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            padding: 10px 0;
+        }
+        ul li{
+            margin-right: 2rem;
+        }
+        ul li a{
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: snow;
+        }
+        section#products{
+            background-color: bisque;
+            height: 100vh;
+            padding: 1px;
+        }
+        .row{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .item{
+            background-color: wheat;
+            display: flex;
+            justify-content: space-between;
+            flex-basis: 23%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .phone span{
+            color: #444;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .img p a{
+            text-decoration: none;
+            color: crimson;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><h3>Our Products</h3></div>
+        <div class="list">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/products/add">Add</a></li>
+                <li><a href="/products/search">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="products">
+        <h1>Your Result</h1>
+           <div class="row">
+            <%productList.forEach((product)=>{%>
+                <div class="item">
+                    <div class="img"> <img src="person_3.jpg" alt="" width="100px">
+                        <p><a href="/products/delete/<%=product.code%>">delete</a>
+                            <a href="/products/edit/<%=product.code%>">edit</a>
+                        </p>
+                    </div>
+                    <div class="phone">
+                        <span class="name"><%=product.pName%></span><br>
+                        <span class="desc"><%=product.pDesc%></span><br>
+                         <span class="price"><%=product.pPrice%></span>
+                    </div>
+                </div>
+            <%})%>
+    </section>
+</body>
+</html>

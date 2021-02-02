@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            background-color: teal;
+        }
+        .logo h3{
+            color:snow;
+            font-size: 1.5rem;
+            padding: 0 10px;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            padding: 10px 0;
+        }
+        ul li{
+            margin-right: 2rem;
+        }
+        ul li a{
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: snow;
+            font-weight: bold;
+        }
+        section#add{
+            background-color:burlywood;
+            height: 100vh;
+            padding: 1rem;
+            text-align: center;
+        }
+        section#add form{
+            background-color: wheat;
+            width: 50%;
+            padding: 1rem;
+            margin: 1rem auto;
+            text-align: center;
+        }
+        section#add form input{
+            margin-bottom: 1rem;
+            width: 100%;
+            padding: 10px;
+            border-color: transparent;
+        }
+        section#add input[type="button"]{
+            background-color: teal;
+            width: 20% !important;
+            color: snow;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><h3>Our Users</h3></div>
+        <div class="list">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/users">Users</a></li>
+                <li><a href="/users/add">Add</a></li>
+                <li><a href="/users/search">Search</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="add">
+        <h2 style="color: teal; font-weight: bold;font-size: 2rem;">Search</h2>
+        <form action="/users/result" method="POST">
+            <input type="text" name="name" placeholder="user name"><br>
+            <input type="submit" value="Search">
+        </form>
+    </section>
+</body>
+</html>
